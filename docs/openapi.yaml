@@ -1,0 +1,27 @@
+openapi: 3.1.0
+info: { title: Workflow Automation API, version: 1.0.0 }
+paths:
+  /v1/workflows:
+    {
+      post:
+        {
+          summary: Create versioned workflow,
+          responses: { "201": { description: Created } },
+        },
+    }
+  /v1/workflows/{id}/trigger:
+    {
+      post:
+        {
+          summary: Idempotent trigger,
+          responses: { "202": { description: Accepted } },
+        },
+    }
+  /v1/executions/{id}/redrive:
+    {
+      post:
+        {
+          summary: Redrive failed execution,
+          responses: { "200": { description: Running } },
+        },
+    }
