@@ -1,0 +1,26 @@
+{
+  "name": "workflow-automation-service",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "go:test": "cd services/engine && go test ./...",
+    "go:build": "cd services/engine && go build ./cmd/worker",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run go:test",
+    "build": "npm run build --workspaces --if-present && npm run go:build",
+    "db:validate": "DATABASE_URL=${DATABASE_URL:-postgresql://workflow:workflow@localhost:5434/workflow} prisma validate"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prisma": "^6.19.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3"
+  }
+}

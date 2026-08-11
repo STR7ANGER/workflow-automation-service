@@ -68,4 +68,3 @@ Frontend and backend must be independently runnable, independently testable, and
 - Database migrations, seed data, API documentation, environment examples, and rollback notes exist.
 - No critical security issues; important race, retry, tenant-isolation, and failure cases are tested.
 - A short demo script, screenshots, architecture diagram, and production-readiness gaps are documented.
-

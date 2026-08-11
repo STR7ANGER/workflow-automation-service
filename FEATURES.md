@@ -47,4 +47,3 @@ Provide a headless durable-execution engine for webhooks, schedules, branches, d
 - Premature microservice decomposition, multi-region active-active deployment, custom cryptography, and unsupported provider-specific behavior.
 - Native mobile apps; the responsive web app and API come first.
 - Machine-learning claims without measurable evaluation data and a deterministic fallback.
-
